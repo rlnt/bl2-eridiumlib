@@ -1,8 +1,9 @@
 import enum
-from typing import Iterable, Optional
+from typing import Iterable, Optional, cast
 import unrealsdk
 from Mods.Eridium.misc import checkClassName, isClient
-from Mods.ModMenu import ServerMethod
+from Mods.ModMenu import NetworkManager, ServerMethod
+import json
 
 
 __all__ = [
@@ -166,3 +167,34 @@ class MissionTracker:
         missionDef = mission.MissionDef.inner()
         unrealsdk.Log(missionDef)
         self.inner().SetActiveMission(missionDef, True, PC)
+
+    @staticmethod
+    def NetworkSerialize(arguments: NetworkManager.NetworkArgsDict) -> str:
+        """
+        Called when instances of this class invoke methods decorated with `@ModMenu.ServerMethod`
+        or `@ModMenu.ClientMethod`, performing the serialization of any arguments passed to said
+        methods. The default implementation uses `json.dumps()`.
+
+        Arguments:
+            arguments:
+                The arguments that need to be serialized. The top-level object passed will be a
+                `dict` keyed with `str`, containing a `list` as well as another `dict`.
+        Returns:
+            The arguments serialized into a text string.
+        """
+        return json.dumps(arguments)
+
+    @staticmethod
+    def NetworkDeserialize(serialized: str) -> NetworkManager.NetworkArgsDict:
+        """
+        Called when instances of this class receive requests for methods decorated with
+        `@ModMenu.ServerMethod` or `@ModMenu.ClientMethod`, performing the deserialization of any
+        arguments passed to said methods. The default implementation uses `json.loads()`.
+
+        Arguments:
+            serialized:
+                The string containing the serialized arguments as returned by 'NetworkSerialize'.
+        Returns:
+            The deserialized arguments in the same format as they were passed to `NetworkSerialize`.
+        """
+        return cast(NetworkManager.NetworkArgsDict, json.loads(serialized))
