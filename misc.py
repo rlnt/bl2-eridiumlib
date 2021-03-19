@@ -1,10 +1,21 @@
-from typing import Optional
 import unrealsdk
+from typing import Optional
 
 
 def isClient() -> bool:
     """Returns true if the current netmode is configured as client."""
     return int(unrealsdk.GetEngine().GetCurrentWorldInfo().NetMode) == 3
+
+
+def getCurrentPlayerController() -> unrealsdk.UObject:
+    """Returns the current player.
+    This seems to always be the local player
+    """
+    players = unrealsdk.GetEngine().GamePlayers
+    if len(players) < 1:
+        raise RuntimeError("No game players found")
+
+    return players[0].Actor
 
 
 def checkClassName(
