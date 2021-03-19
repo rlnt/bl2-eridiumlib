@@ -8,14 +8,38 @@ from Mods.ModMenu import (
     EnabledSaveType,
     RegisterMod,
 )
-from Mods.Eridium import missions, keys, misc
+from Mods.Eridium import keys, debug
 from Mods.Eridium.keys import KeyBinds
 
-__all__ = ["log", "EridiumMod", "missions", "keys", "misc"]
+__all__ = [
+    "log",
+    "isClient",
+    "getCurrentPlayerController",
+    "EridiumMod",
+    "missions",
+    "keys",
+    "debug",
+]
 
 
 def log(mod: SDKMod, message: str) -> None:
     unrealsdk.Log(f"[{mod.Name}] {message}")
+
+
+def isClient() -> bool:
+    """Returns true if the current netmode is configured as client."""
+    return int(unrealsdk.GetEngine().GetCurrentWorldInfo().NetMode) == 3
+
+
+def getCurrentPlayerController() -> unrealsdk.UObject:
+    """Returns the current player.
+    This seems to always be the local player
+    """
+    players = unrealsdk.GetEngine().GamePlayers
+    if len(players) < 1:
+        raise RuntimeError("No game players found")
+
+    return players[0].Actor
 
 
 class EridiumMod(SDKMod):
@@ -33,7 +57,7 @@ class EridiumMod(SDKMod):
         KeyBinds.D: "Discord",
     }
 
-    def __init__(self):
+    def Enabled(self):
         log(self, f"Version: {self.Version}")
         log(self, f"__debug__: {__debug__}")
 
