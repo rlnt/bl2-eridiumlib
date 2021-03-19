@@ -6,6 +6,10 @@ __all__ = ["KeyBinds"]
 class KeyBinds(enum.Enum):
     """https://docs.unrealengine.com/udk/Three/KeyBinds.html#Mappable%20keys"""
 
+    # make variants return their value, not their name
+    def __str__(self):
+        return str(self.value)
+
     # Function keys
     F1 = "F1"  # Function one.
     F2 = "F2"  # Function two.
