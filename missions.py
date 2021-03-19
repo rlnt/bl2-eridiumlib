@@ -1,9 +1,9 @@
-import enum
-from typing import Iterable, Optional, cast
 import unrealsdk
+import enum
+from typing import Iterable, Optional
+from Mods.ModMenu import ServerMethod
 from Mods.Eridium.misc import checkClassName, isClient
-from Mods.ModMenu import NetworkManager, ServerMethod
-import json
+from Mods.Eridium.wrapper import NetworkingClass
 
 
 __all__ = [
@@ -56,7 +56,7 @@ class Mission:
     """A wrapper for a WillowGame.IMission.MissionData object."""
 
     def __init__(self, inner: unrealsdk.FStruct):
-        # checkClassName(inner, "IMission.MissionData") # is struct can do :(
+        # checkClassName(inner, "IMission.MissionData") # is a struct, no can do :(
         assert inner is not None
 
         self._inner: unrealsdk.FStruct = inner
@@ -86,7 +86,7 @@ class Mission:
         self.inner().Status = status
 
 
-class MissionTracker:
+class MissionTracker(NetworkingClass):
     """A wrapper for a WillowGame.MissionTracker object."""
 
     def __init__(self):
@@ -165,36 +165,4 @@ class MissionTracker:
     ) -> None:
         mission = self.getMissionByNumber(number)
         missionDef = mission.MissionDef.inner()
-        unrealsdk.Log(missionDef)
         self.inner().SetActiveMission(missionDef, True, PC)
-
-    @staticmethod
-    def NetworkSerialize(arguments: NetworkManager.NetworkArgsDict) -> str:
-        """
-        Called when instances of this class invoke methods decorated with `@ModMenu.ServerMethod`
-        or `@ModMenu.ClientMethod`, performing the serialization of any arguments passed to said
-        methods. The default implementation uses `json.dumps()`.
-
-        Arguments:
-            arguments:
-                The arguments that need to be serialized. The top-level object passed will be a
-                `dict` keyed with `str`, containing a `list` as well as another `dict`.
-        Returns:
-            The arguments serialized into a text string.
-        """
-        return json.dumps(arguments)
-
-    @staticmethod
-    def NetworkDeserialize(serialized: str) -> NetworkManager.NetworkArgsDict:
-        """
-        Called when instances of this class receive requests for methods decorated with
-        `@ModMenu.ServerMethod` or `@ModMenu.ClientMethod`, performing the deserialization of any
-        arguments passed to said methods. The default implementation uses `json.loads()`.
-
-        Arguments:
-            serialized:
-                The string containing the serialized arguments as returned by 'NetworkSerialize'.
-        Returns:
-            The deserialized arguments in the same format as they were passed to `NetworkSerialize`.
-        """
-        return cast(NetworkManager.NetworkArgsDict, json.loads(serialized))
