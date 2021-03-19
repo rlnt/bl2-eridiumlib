@@ -1,5 +1,6 @@
 import unrealsdk
-import Mods.ModMenu
+from typing import Dict
+import webbrowser
 from Mods.ModMenu import (
     SDKMod,
     Mods,
@@ -8,6 +9,7 @@ from Mods.ModMenu import (
     RegisterMod,
 )
 from Mods.Eridium import missions, keys, misc
+from Mods.Eridium.keys import KeyBinds
 
 __all__ = ["log", "EridiumMod", "missions", "keys", "misc"]
 
@@ -24,11 +26,24 @@ class EridiumMod(SDKMod):
 
     Types = ModTypes.Library
     SaveEnabledState = EnabledSaveType.LoadWithSettings
-    IsEnabled = True
+
+    SettingsInputs: Dict[str, str] = {
+        KeyBinds.Enter: "Enable",
+        KeyBinds.G: "GitHub",
+        KeyBinds.D: "Discord",
+    }
 
     def __init__(self):
         log(self, f"Version: {self.Version}")
         log(self, f"__debug__: {__debug__}")
+
+    def SettingsInputPressed(self, action: str) -> None:
+        if action == "GitHub":
+            webbrowser.open("https://github.com/RLNT/bl2_eridium")
+        elif action == "Discord":
+            webbrowser.open("https://discord.com/invite/Q3qxws6")
+        else:
+            super().SettingsInputPressed(action)
 
 
 instance = EridiumMod()
