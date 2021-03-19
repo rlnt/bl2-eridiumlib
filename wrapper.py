@@ -1,7 +1,7 @@
 from typing import cast
 from Mods.ModMenu import NetworkManager
 from abc import ABC
-import json
+import pickle as serializer
 
 
 class NetworkingClass(ABC):
@@ -10,7 +10,7 @@ class NetworkingClass(ABC):
         """
         Called when instances of this class invoke methods decorated with `@ModMenu.ServerMethod`
         or `@ModMenu.ClientMethod`, performing the serialization of any arguments passed to said
-        methods. The default implementation uses `json.dumps()`.
+        methods. The default implementation uses `pickel.dumps()`.
 
         Arguments:
             arguments:
@@ -19,14 +19,14 @@ class NetworkingClass(ABC):
         Returns:
             The arguments serialized into a text string.
         """
-        return json.dumps(arguments)
+        return serializer.dumps(arguments)
 
     @staticmethod
     def NetworkDeserialize(serialized: str) -> NetworkManager.NetworkArgsDict:
         """
         Called when instances of this class receive requests for methods decorated with
         `@ModMenu.ServerMethod` or `@ModMenu.ClientMethod`, performing the deserialization of any
-        arguments passed to said methods. The default implementation uses `json.loads()`.
+        arguments passed to said methods. The default implementation uses `pickle.loads()`.
 
         Arguments:
             serialized:
@@ -34,4 +34,4 @@ class NetworkingClass(ABC):
         Returns:
             The deserialized arguments in the same format as they were passed to `NetworkSerialize`.
         """
-        return cast(NetworkManager.NetworkArgsDict, json.loads(serialized))
+        return cast(NetworkManager.NetworkArgsDict, serializer.loads(serialized))
