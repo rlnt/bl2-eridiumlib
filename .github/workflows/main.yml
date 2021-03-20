@@ -20,7 +20,7 @@ jobs:
     - name: Lint with black
       run: python -m black . --check
     - name: Lint with flake8
-      run: python -m flake8 .
+      run: python -m flake8 . -v --show-source --statistics
     - name: Lint with mypy
       run: python -m mypy . --pretty
   build:
