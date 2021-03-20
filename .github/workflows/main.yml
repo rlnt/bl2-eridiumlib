@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 env:
   MOD_NAME: Eridium
-  RELEASE_FILES: "*.py LICENSE licenses/ dist/"
+  RELEASE_FILES: "*.py LICENSE licenses dist"
 
 jobs:
   check:
@@ -50,9 +50,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Package as tar
-      run: tar czf ${{ github.event.repository.name }}.tar.gz $RELEASE_FILES
+      run: tar -czvf ${{ github.event.repository.name }}.tar.gz $RELEASE_FILES
     - name: Package as zip
-      run: zip ${{ github.event.repository.name }}.zip $RELEASE_FILES
+      run: zip -r ${{ github.event.repository.name }}.zip $RELEASE_FILES
 
     - name: Release
       uses: softprops/action-gh-release@v1
