@@ -10,150 +10,283 @@ class KeyBinds(enum.Enum):
     def __str__(self) -> str:
         return str(self.value)
 
+    #
     # Function keys
-    F1 = "F1"  # Function one.
-    F2 = "F2"  # Function two.
-    F3 = "F3"  # Function three.
-    F4 = "F4"  # Function four.
-    F5 = "F5"  # Function five.
-    F6 = "F6"  # Function six.
-    F7 = "F7"  # Function seven.
-    F8 = "F8"  # Function eight.
-    F9 = "F9"  # Function nine.
-    F10 = "F10"  # Function ten.
-    F11 = "F11"  # Function eleven.
-    F12 = "F12"  # Function twelve.
+    #
 
+    # Function one.
+    F1 = "F1"
+    # Function two.
+    F2 = "F2"
+    # Function three.
+    F3 = "F3"
+    # Function four.
+    F4 = "F4"
+    # Function five.
+    F5 = "F5"
+    # Function six.
+    F6 = "F6"
+    # Function seven.
+    F7 = "F7"
+    # Function eight.
+    F8 = "F8"
+    # Function nine.
+    F9 = "F9"
+    # Function ten.
+    F10 = "F10"
+    # Function eleven.
+    F11 = "F11"
+    # Function twelve.
+    F12 = "F12"
+
+    #
     # Alphanumerical keys
-    A = "A"  # Letter A.
-    B = "B"  # Letter B.
-    C = "C"  # Letter C.
-    D = "D"  # Letter D.
-    E = "E"  # Letter E.
-    F = "F"  # Letter F.
-    G = "G"  # Letter G.
-    H = "H"  # Letter H.
-    I = "I"  # Letter I. # noqa: E741
-    J = "J"  # Letter J.
-    K = "K"  # Letter K.
-    L = "L"  # Letter L.
-    M = "M"  # Letter M.
-    N = "N"  # Letter N.
-    O = "O"  # Letter O. # noqa: E741
-    P = "P"  # Letter P.
-    Q = "Q"  # Letter Q.
-    R = "R"  # Letter R.
-    S = "S"  # Letter S.
-    T = "T"  # Letter T.
-    U = "U"  # Letter U.
-    V = "V"  # Letter V.
-    W = "W"  # Letter W.
-    X = "X"  # Letter X.
-    Y = "Y"  # Letter Y.
-    Z = "Z"  # Letter Z.
+    #
 
+    # Letter A.
+    A = "A"
+    # Letter B.
+    B = "B"
+    # Letter C.
+    C = "C"
+    # Letter D.
+    D = "D"
+    # Letter E.
+    E = "E"
+    # Letter F.
+    F = "F"
+    # Letter G.
+    G = "G"
+    # Letter H.
+    H = "H"
+    # Letter I.
+    I = "I"  # noqa: E741
+    # Letter J.
+    J = "J"
+    # Letter K.
+    K = "K"
+    # Letter L.
+    L = "L"
+    # Letter M.
+    M = "M"
+    # Letter N.
+    N = "N"
+    # Letter O.
+    O = "O"  # noqa: E741
+    # Letter P.
+    P = "P"
+    # Letter Q.
+    Q = "Q"
+    # Letter R.
+    R = "R"
+    # Letter S.
+    S = "S"
+    # Letter T.
+    T = "T"
+    # Letter U.
+    U = "U"
+    # Letter V.
+    V = "V"
+    # Letter W.
+    W = "W"
+    # Letter X.
+    X = "X"
+    # Letter Y.
+    Y = "Y"
+    # Letter Z.
+    Z = "Z"
+
+    #
     # Special keys
-    Escape = "Escape"  # Escape.
-    Tab = "Tab"  # Tab.
-    Tilde = "Tilde"  # ~.
-    ScrollLock = "ScrollLock"  # Scroll lock.
-    Pause = "Pause"  # Pause.
-    One = "one"  # One.
-    Two = "two"  # Two.
-    Three = "three"  # Three.
-    Four = "four"  # Four.
-    Five = "five"  # Five.
-    Six = "six"  # Six.
-    Seven = "seven"  # Seven.
-    Eight = "eight"  # Eight.
-    Nine = "nine"  # Nine.
-    Zero = "zero"  # Zero.
-    Underscore = "Underscore"  # _.
-    Equals = "Equals"  # =.
-    Backslash = "Backslash"  # \.
-    LeftBracket = "LeftBracket"  # [.
-    RightBracket = "RightBracket"  # ].
-    Enter = "Enter"  # Enter or Numpad enter.
-    CapsLock = "CapsLock"  # Caps lock.
-    Semicolon = "Semicolon"  # ;.
-    Quote = "Quote"  # '.
-    LeftShift = "LeftShift"  # Left shift.
-    Comma = "Comma"  # ,.
-    Period = "Period"  # ..
-    Slash = "Slash"  # /.
-    RightShift = "RightShift"  # Right Shift
-    LeftControl = "LeftControl"  # Left control.
-    LeftAlt = "LeftAlt"  # Left alt.
-    SpaceBar = "SpaceBar"  # Space bar.
-    RightAlt = "RightAlt"  # Right alt.
-    RightControl = "RightControl"  # Right control.
-    Left = "Left"  # Left.
-    Up = "Up"  # Up.
-    Down = "Down"  # Down.
-    Right = "Right"  # Right.
-    Home = "Home"  # Home.
-    End = "End"  # End.
-    Insert = "Insert"  # Insert.
-    PageUp = "PageUp"  # Page up.
-    Delete = "Delete"  # Delete.
-    PageDown = "PageDown"  # Page down.
-    NumLock = "NumLock"  # Num lock.
-    Divide = "Divide"  # Numpad /.
-    Multiply = "Multiply"  # Numpad *.
-    Subtract = "Subtract"  # Numpad -.
-    Add = "Add"  # Numpad +.
-    NumPadOne = "NumPadOne"  # Numpad one.
-    NumPadTwo = "NumPadTwo"  # Numpad two.
-    NumPadThree = "NumPadThree"  # Numpad three.
-    NumPadFour = "NumPadFour"  # Numpad four.
-    NumPadFive = "NumPadFive"  # Numpad five.
-    NumPadSix = "NumPadSix"  # Numpad six.
-    NumPadSeven = "NumPadSeven"  # Numpad seven.
-    NumPadEight = "NumPadEight"  # Numpad eight.
-    NumPadNine = "NumPadNine"  # Numpad nine.
-    NumPadZero = "NumPadZero"  # Numpad zero.
-    NumPadDecimal = "Decimal"  # Numpad decimal.
+    #
 
+    # Escape.
+    Escape = "Escape"
+    # Tab.
+    Tab = "Tab"
+    # ~.
+    Tilde = "Tilde"
+    # Scroll lock.
+    ScrollLock = "ScrollLock"
+    # Pause.
+    Pause = "Pause"
+    # One.
+    One = "one"
+    # Two.
+    Two = "two"
+    # Three.
+    Three = "three"
+    # Four.
+    Four = "four"
+    # Five.
+    Five = "five"
+    # Six.
+    Six = "six"
+    # Seven.
+    Seven = "seven"
+    # Eight.
+    Eight = "eight"
+    # Nine.
+    Nine = "nine"
+    # Zero.
+    Zero = "zero"
+    # _.
+    Underscore = "Underscore"
+    # =.
+    Equals = "Equals"
+    # \.
+    Backslash = "Backslash"
+    # [.
+    LeftBracket = "LeftBracket"
+    # ].
+    RightBracket = "RightBracket"
+    # Enter or Numpad enter.
+    Enter = "Enter"
+    # Caps lock.
+    CapsLock = "CapsLock"
+    # ;.
+    Semicolon = "Semicolon"
+    # '.
+    Quote = "Quote"
+    # Left shift.
+    LeftShift = "LeftShift"
+    # ,.
+    Comma = "Comma"
+    # ..
+    Period = "Period"
+    # /.
+    Slash = "Slash"
+    # Right Shift
+    RightShift = "RightShift"
+    # Left control.
+    LeftControl = "LeftControl"
+    # Left alt.
+    LeftAlt = "LeftAlt"
+    # Space bar.
+    SpaceBar = "SpaceBar"
+    # Right alt.
+    RightAlt = "RightAlt"
+    # Right control.
+    RightControl = "RightControl"
+    # Left.
+    Left = "Left"
+    # Up.
+    Up = "Up"
+    # Down.
+    Down = "Down"
+    # Right.
+    Right = "Right"
+    # Home.
+    Home = "Home"
+    # End.
+    End = "End"
+    # Insert.
+    Insert = "Insert"
+    # Page up.
+    PageUp = "PageUp"
+    # Delete.
+    Delete = "Delete"
+    # Page down.
+    PageDown = "PageDown"
+    # Num lock.
+    NumLock = "NumLock"
+    # Numpad /.
+    Divide = "Divide"
+    # Numpad *.
+    Multiply = "Multiply"
+    # Numpad -.
+    Subtract = "Subtract"
+    # Numpad +.
+    Add = "Add"
+    # Numpad one.
+    NumPadOne = "NumPadOne"
+    # Numpad two.
+    NumPadTwo = "NumPadTwo"
+    # Numpad three.
+    NumPadThree = "NumPadThree"
+    # Numpad four.
+    NumPadFour = "NumPadFour"
+    # Numpad five.
+    NumPadFive = "NumPadFive"
+    # Numpad six.
+    NumPadSix = "NumPadSix"
+    # Numpad seven.
+    NumPadSeven = "NumPadSeven"
+    # Numpad eight.
+    NumPadEight = "NumPadEight"
+    # Numpad nine.
+    NumPadNine = "NumPadNine"
+    # Numpad zero.
+    NumPadZero = "NumPadZero"
+    # Numpad decimal.
+    NumPadDecimal = "Decimal"
+
+    #
     # Mouse
-    LeftMouseButton = "LeftMouseButton"  # Left mouse button.
-    RightMouseButton = "RightMouseButton"  # Right mouse button.
-    ThumbMouseButton = "ThumbMouseButton"  # Primary mouse thumb button.
-    ThumbMouseButton2 = "ThumbMouseButton2"  # Secondary mouse thumb button.
-    MouseScrollUp = "MouseScrollUp"  # Mouse wheel scrolling up.
-    MouseScrollDown = "MouseScrollDown"  # Mouse wheel scrolling down.
-    MouseX = "MouseX"  # Mouse movement on the X axis.
-    MouseY = "MouseY"  # Mouse movement on the Y axis.
+    #
 
+    # Left mouse button.
+    LeftMouseButton = "LeftMouseButton"
+    # Right mouse button.
+    RightMouseButton = "RightMouseButton"
+    # Primary mouse thumb button.
+    ThumbMouseButton = "ThumbMouseButton"
+    # Secondary mouse thumb button.
+    ThumbMouseButton2 = "ThumbMouseButton2"
+    # Mouse wheel scrolling up.
+    MouseScrollUp = "MouseScrollUp"
+    # Mouse wheel scrolling down.
+    MouseScrollDown = "MouseScrollDown"
+    # Mouse movement on the X axis.
+    MouseX = "MouseX"
+    # Mouse movement on the Y axis.
+    MouseY = "MouseY"
+
+    #
     # XBox360 Controller
-    GamePad_LeftThumbStick = (
-        "XboxTypeS_LeftThumbStick"  # Left thumb stick when pressed as a button.
-    )
-    GamePad_RightThumbStick = (
-        "XboxTypeS_RightThumbStick"  # Right thumb stick when pressed as a button.
-    )
-    GamePad_DPad_Up = "XboxTypeS_DPad_Up"  # Directional pad up.
-    GamePad_DPad_Left = "XboxTypeS_DPad_Left"  # Directional pad left.
-    GamePad_DPad_Right = "XboxTypeS_DPad_Right"  # Directional pad right.
-    GamePad_DPad_Down = "XboxTypeS_DPad_Down"  # Directional pad down.
-    GamePad_Back = "XboxTypeS_Back"  # Back button.
-    GamePad_Start = "XboxTypeS_Start"  # Start button.
-    GamePad_Y = "XboxTypeS_Y"  # Y button.
-    GamePad_X = "XboxTypeS_X"  # X button.
-    GamePad_B = "XboxTypeS_B"  # B button.
-    GamePad_A = "XboxTypeS_A"  # A button.
-    GamePad_LeftShoulder = "XboxTypeS_LeftShoulder"  # Left shoulder button.
-    GamePad_RightShoulder = "XboxTypeS_RightShoulder"  # Right shoulder button.
-    GamePad_LeftTrigger = "XboxTypeS_LeftTrigger"  # Left trigger when pressed as a button.
-    GamePad_RightTrigger = "XboxTypeS_RightTrigger"  # Right trigger when pressed as a button.
-    GamePad_LeftTriggerAxis = "XboxTypeS_LeftTriggerAxis"  # Left trigger when semi depressed.
-    GamePad_RightTriggerAxis = "XboxTypeS_RightTriggerAxis"  # Right trigger when semi depressed.
-    GamePad_LeftX = (
-        "XboxTypeS_LeftX"  # Left thumb stick horizontal position when used as an analogue control.
-    )
-    GamePad_LeftY = (
-        "XboxTypeS_LeftY"  # Left thumb stick vertical position when used as an analogue control.
-    )
-    GamePad_RightX = "XboxTypeS_RightX"  # Right thumb stick horizontal position when used as an analogue control.
-    GamePad_RightY = (
-        "XboxTypeS_RightY"  # Right thumb stick vertical position when used as an analogue control.
-    )
+    #
+
+    # Left thumb stick when pressed as a button.
+    GamePad_LeftThumbStick = "XboxTypeS_LeftThumbStick"
+    # Right thumb stick when pressed as a button.
+    GamePad_RightThumbStick = "XboxTypeS_RightThumbStick"
+    # Directional pad up.
+    GamePad_DPad_Up = "XboxTypeS_DPad_Up"
+    # Directional pad left.
+    GamePad_DPad_Left = "XboxTypeS_DPad_Left"
+    # Directional pad right.
+    GamePad_DPad_Right = "XboxTypeS_DPad_Right"
+    # Directional pad down.
+    GamePad_DPad_Down = "XboxTypeS_DPad_Down"
+    # Back button.
+    GamePad_Back = "XboxTypeS_Back"
+    # Start button.
+    GamePad_Start = "XboxTypeS_Start"
+    # Y button.
+    GamePad_Y = "XboxTypeS_Y"
+    # X button.
+    GamePad_X = "XboxTypeS_X"
+    # B button.
+    GamePad_B = "XboxTypeS_B"
+    # A button.
+    GamePad_A = "XboxTypeS_A"
+    # Left shoulder button.
+    GamePad_LeftShoulder = "XboxTypeS_LeftShoulder"
+    # Right shoulder button.
+    GamePad_RightShoulder = "XboxTypeS_RightShoulder"
+    # Left trigger when pressed as a button.
+    GamePad_LeftTrigger = "XboxTypeS_LeftTrigger"
+    # Right trigger when pressed as a button.
+    GamePad_RightTrigger = "XboxTypeS_RightTrigger"
+    # Left trigger when semi depressed.
+    GamePad_LeftTriggerAxis = "XboxTypeS_LeftTriggerAxis"
+    # Right trigger when semi depressed.
+    GamePad_RightTriggerAxis = "XboxTypeS_RightTriggerAxis"
+    # Left thumb stick horizontal position when used as an analogue control.
+    GamePad_LeftX = "XboxTypeS_LeftX"
+    # Left thumb stick vertical position when used as an analogue control.
+    GamePad_LeftY = "XboxTypeS_LeftY"
+    # Right thumb stick horizontal position when used as an analogue control.
+    GamePad_RightX = "XboxTypeS_RightX"
+    # Right thumb stick vertical position when used as an analogue control.
+    GamePad_RightY = "XboxTypeS_RightY"
