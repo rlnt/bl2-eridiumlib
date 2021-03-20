@@ -7,10 +7,10 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: /tmp/PythonSDK/Mods/${{ github.event.repository.name }}
+        working-directory: tmp/PythonSDK/Mods/${{ github.event.repository.name }}
     steps:    
     - name: Clone PythonSDK Mods
-      working-directory: /tmp
+      working-directory: tmp
       run: |
         git clone --depth 1 --filter=blob:none --sparse https://github.com/bl-sdk/PythonSDK
         cd PythonSDK
@@ -18,7 +18,7 @@ jobs:
         git sparse-checkout set Mods
     - uses: actions/checkout@v2     
       with:
-        path: /tmp/PythonSDK/Mods/${{ github.event.repository.name }}
+        path: tmp/PythonSDK/Mods/${{ github.event.repository.name }}
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
