@@ -8,12 +8,13 @@ env:
 jobs:
   check:
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
+    # defaults:
+    #   run:
+    #     working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
     steps:
     - run: echo "$MOD_NAME"
     - run: pwd
+      working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
 
     - uses: actions/setup-python@v1
       with:
