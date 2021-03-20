@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
 import site
 
-site.addsitedir("Mods/Eridium/vendor")
+site.addsitedir("Mods/Eridium/dist")
 
 # import bundled packages
 import requests  # noqa: E402
