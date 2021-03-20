@@ -6,7 +6,15 @@ jobs:
   check:
     runs-on: windows-latest
     steps:    
+    - name: Clone PythonSDK Mods
+      run: |
+        git clone --depth 1 --filter=blob:none --sparse https://github.com/bl-sdk/PythonSDK
+        cd PythonSDK
+        git sparse-checkout init --cone
+        git sparse-checkout set Mods
     - uses: actions/checkout@v2     
+      with:
+        path: PythonSDK/Mods/${{ github.event.repository.name }}
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'

@@ -1,3 +1,4 @@
+# pyright: reportMissingImports=false
 import unrealsdk
 from typing import Optional
 
