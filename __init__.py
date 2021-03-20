@@ -1,17 +1,12 @@
 import unrealsdk
-from typing import Dict
-import webbrowser
 import importlib
-from Mods.ModMenu import (
-    SDKMod,
-    ModTypes,
-    EnabledSaveType,
-    Mods,
-    RegisterMod,
-    ModPriorities,
-)
-from Mods.Eridium import keys, debug
+import webbrowser
+from typing import Dict
+
+from Mods.Eridium import debug, keys
 from Mods.Eridium.keys import KeyBinds
+
+from Mods.ModMenu import EnabledSaveType, ModPriorities, Mods, ModTypes, RegisterMod, SDKMod
 
 if __name__ == "__main__":
     import sys
