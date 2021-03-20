@@ -37,7 +37,7 @@ jobs:
       run: python -m flake8 . -v --show-source --statistics
     - name: Lint with mypy
       working-directory: PythonSDK/Mods/${{ github.event.repository.name }}
-      run: python -m mypy . --pretty
+      run: python -m mypy . -v --pretty
   build:
     runs-on: ubuntu-latest
     env: 
