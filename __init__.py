@@ -3,7 +3,7 @@ import unrealsdk
 from typing import Dict
 import webbrowser
 import importlib
-from Mods.ModMenu import SDKMod, ModTypes, EnabledSaveType, Hook
+from Mods.ModMenu import SDKMod, ModTypes, EnabledSaveType, Hook, Mods, RegisterMod
 from Mods.Eridium import keys, debug
 from Mods.Eridium.keys import KeyBinds
 
@@ -104,11 +104,11 @@ def _OnMainMenu(
     caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct
 ) -> bool:
     instance = EridiumMod()
-    unrealsdk.RegisterMod(instance)
+    RegisterMod(instance)
     if __name__ == "__main__":
-        for i in range(len(unrealsdk.Mods)):
-            if unrealsdk.Mods[i].Name == instance.Name:
-                unrealsdk.Mods.remove(instance)
-                unrealsdk.Mods[i] = instance
+        for mod in Mods:
+            if mod.Name == instance.Name:
+                Mods.remove(instance)
+                Mods.append(instance)
                 break
     return True
