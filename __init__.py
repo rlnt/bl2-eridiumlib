@@ -1,9 +1,15 @@
-from Mods.ModMenu.ModObjects import ModPriorities
 import unrealsdk
 from typing import Dict
 import webbrowser
 import importlib
-from Mods.ModMenu import SDKMod, ModTypes, EnabledSaveType, Hook, Mods, RegisterMod
+from Mods.ModMenu import (
+    SDKMod,
+    ModTypes,
+    EnabledSaveType,
+    Mods,
+    RegisterMod,
+    ModPriorities,
+)
 from Mods.Eridium import keys, debug
 from Mods.Eridium.keys import KeyBinds
 
@@ -66,8 +72,8 @@ def isLatestRelease(latest_version: str, current_version: str) -> bool:
     return semver.compare(current_version, latest_version) >= 0
 
 
-class EridiumMod(SDKMod):
-    Name = "Eridium"
+class EridiumLib(SDKMod):
+    Name = "EridiumLib"
     Author = "Chronophylos"
     Description = "A library with common functionality of all our mods"
     Version = "0.1.0"
@@ -83,6 +89,8 @@ class EridiumMod(SDKMod):
     }
 
     def __init__(self):
+        self.Status = "Enabled"
+
         log(self, f"Version: {self.Version}")
         log(self, f"__debug__: {__debug__}")
         try:
@@ -99,16 +107,11 @@ class EridiumMod(SDKMod):
             super().SettingsInputPressed(action)
 
 
-@Hook("WillowGame.FrontendGFxMovie.Start")
-def _OnMainMenu(
-    caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct
-) -> bool:
-    instance = EridiumMod()
-    RegisterMod(instance)
-    if __name__ == "__main__":
-        for mod in Mods:
-            if mod.Name == instance.Name:
-                Mods.remove(instance)
-                Mods.append(instance)
-                break
-    return True
+instance = EridiumLib()
+if __name__ == "__main__":
+    for mod in Mods:
+        if mod.Name == instance.Name:
+            Mods.remove(mod)
+            Mods.append(instance)
+            break
+RegisterMod(instance)
