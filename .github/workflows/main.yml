@@ -8,7 +8,7 @@ env:
 jobs:
   check:
     runs-on: windows-latest
-    default:
+    defaults:
       run:
         working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
     steps:    
