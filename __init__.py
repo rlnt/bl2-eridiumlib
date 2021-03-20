@@ -88,7 +88,7 @@ class EridiumMod(SDKMod):
         try:
             log(self, f"Latest release tag: {getLatestVersion('RLNT/bl2_eridium')}")
         except RuntimeWarning as ex:
-            log(self, f"Error: {ex}")
+            log(self, f"Warning: {ex}")
 
     def SettingsInputPressed(self, action: str) -> None:
         if action == "GitHub":
