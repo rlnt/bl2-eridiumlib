@@ -79,7 +79,6 @@ class EridiumLib(SDKMod):
     Priority = ModPriorities.Library
 
     SettingsInputs: Dict[str, str] = {
-        KeyBinds.Enter.value: "Enable",
         KeyBinds.G.value: "GitHub",
         KeyBinds.D.value: "Discord",
     }
