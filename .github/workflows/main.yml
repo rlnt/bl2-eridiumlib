@@ -40,7 +40,7 @@ jobs:
       run: python -m flake8 . -v --show-source --statistics
     - name: Lint with mypy
       working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
-      run: python -m mypy . -v --pretty
+      run: python -m mypy . --pretty
   build:
     runs-on: ubuntu-latest
     env: 
