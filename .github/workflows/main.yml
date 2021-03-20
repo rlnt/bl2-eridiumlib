@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 env:
   MOD_NAME: Eridium
+  RELEASE_FILES: "*.py LICENSE licenses/ dist/"
 
 jobs:
   check:
@@ -44,16 +45,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env: 
-      FILES: "*.py LICENSE license/ vendor/"
     if: startsWith(github.ref, 'refs/tags/')
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Package as tar
-      run: tar czf ${{ github.event.repository.name }}.tar.gz $FILES
+      run: tar czf ${{ github.event.repository.name }}.tar.gz $RELEASE_FILES
     - name: Package as zip
-      run: zip ${{ github.event.repository.name }}.zip $FILES
+      run: zip ${{ github.event.repository.name }}.zip $RELEASE_FILES
 
     - name: Release
       uses: softprops/action-gh-release@v1
