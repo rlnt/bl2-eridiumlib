@@ -12,10 +12,6 @@ jobs:
     #   run:
     #     working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
     steps:
-    - run: echo "$Env:MOD_NAME"
-    - run: pwd
-      working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
-
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
@@ -30,6 +26,11 @@ jobs:
     - uses: actions/checkout@v2     
       with:
         path: PythonSDK/Mods/${{ env.MOD_NAME }}
+      
+    - run: echo "$Env:MOD_NAME"
+    - run: pwd
+    - run: pwd
+      working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
 
     - name: Install dependencies
       run: |
