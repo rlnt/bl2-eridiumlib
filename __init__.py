@@ -1,5 +1,5 @@
 import unrealsdk
-from typing import Dict, Optional
+from typing import Dict
 import webbrowser
 import importlib
 from Mods.ModMenu import (
