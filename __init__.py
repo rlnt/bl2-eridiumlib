@@ -35,11 +35,7 @@ def getCurrentPlayerController() -> unrealsdk.UObject:
     """Returns the current player.
     This seems to always be the local player
     """
-    players = unrealsdk.GetEngine().GamePlayers
-    if len(players) < 1:
-        raise RuntimeError("No game players found")
-
-    return players[0].Actor
+    return unrealsdk.GetEngine().GamePlayers[0].Actor
 
 
 class EridiumMod(SDKMod):
