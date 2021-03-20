@@ -72,7 +72,7 @@ class EridiumLib(SDKMod):
     Name = "EridiumLib"
     Author = "Chronophylos"
     Description = "A library with common functionality of all our mods"
-    Version = "0.1.0"
+    Version = "0.2.0"
 
     Types = ModTypes.Library
     SaveEnabledState = EnabledSaveType.LoadWithSettings
