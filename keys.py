@@ -7,7 +7,7 @@ class KeyBinds(enum.Enum):
     """https://docs.unrealengine.com/udk/Three/KeyBinds.html#Mappable%20keys"""
 
     # make variants return their value, not their name
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.value)
 
     # Function keys

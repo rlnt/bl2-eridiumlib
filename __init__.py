@@ -60,11 +60,11 @@ def getLatestVersion(repo: str) -> str:
     releases = response.json()
     if len(releases) < 1:
         raise RuntimeWarning(f"{repo} has no releases")
-    return releases[0]["tag_name"]
+    return str(releases[0]["tag_name"])
 
 
 def isLatestRelease(latest_version: str, current_version: str) -> bool:
-    return semver.compare(current_version, latest_version) >= 0
+    return int(semver.compare(current_version, latest_version)) >= 0
 
 
 class EridiumLib(SDKMod):
@@ -78,12 +78,12 @@ class EridiumLib(SDKMod):
     Priority = ModPriorities.Library
 
     SettingsInputs: Dict[str, str] = {
-        KeyBinds.Enter: "Enable",
-        KeyBinds.G: "GitHub",
-        KeyBinds.D: "Discord",
+        KeyBinds.Enter.value: "Enable",
+        KeyBinds.G.value: "GitHub",
+        KeyBinds.D.value: "Discord",
     }
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.Status = "Enabled"
 
         log(self, f"Version: {self.Version}")

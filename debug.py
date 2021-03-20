@@ -4,7 +4,7 @@ from typing import Optional
 
 def checkClassName(
     obj: unrealsdk.UObject, expectedClass: str, expectedName: Optional[str] = None
-) -> bool:
+) -> None:
     if obj is None:
         raise RuntimeError(f"object of class {expectedClass} must not be none")
 
