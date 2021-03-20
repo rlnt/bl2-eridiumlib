@@ -12,7 +12,7 @@ jobs:
     #   run:
     #     working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
     steps:
-    - run: echo "$MOD_NAME"
+    - run: echo "$Env:MOD_NAME"
     - run: pwd
       working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
 
