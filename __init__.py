@@ -1,6 +1,7 @@
 import unrealsdk
-from typing import Dict
+from typing import Dict, Optional
 import webbrowser
+import importlib
 from Mods.ModMenu import (
     SDKMod,
     Mods,
@@ -10,6 +11,25 @@ from Mods.ModMenu import (
 )
 from Mods.Eridium import keys, debug
 from Mods.Eridium.keys import KeyBinds
+
+if __name__ == "__main__":
+    import sys
+
+    importlib.reload(sys.modules["Mods.Eridium.keys"])
+
+    # See https://github.com/bl-sdk/PythonSDK/issues/68
+    try:
+        raise NotImplementedError
+    except NotImplementedError:
+        __file__ = sys.exc_info()[-1].tb_frame.f_code.co_filename  # type: ignore
+
+import site
+
+site.addsitedir("Mods/Eridium/vendor")
+
+# import bundled packages
+import requests  # noqa: E402
+import semver  # noqa: E402
 
 __all__ = [
     "log",
@@ -42,6 +62,21 @@ def getCurrentPlayerController() -> unrealsdk.UObject:
     return players[0].Actor
 
 
+def getLatestVersion(repo: str) -> str:
+    response = requests.get(f"https://api.github.com/repos/{repo}/releases")
+    response.raise_for_status()
+    releases = response.json()
+    if len(releases) < 1:
+        raise RuntimeWarning(f"{repo} has no releases")
+    return releases[0]["tag_name"]
+
+
+def isLatestRelease(latest_version: str, current_version: str) -> bool:
+    latest = semver.VersionInfo.parse(latest_version)
+    current = semver.VersionInfo.parse(current_version)
+    return semver.compare(current, latest) >= 0
+
+
 class EridiumMod(SDKMod):
     Name = "Eridium"
     Author = "Chronophylos"
@@ -57,9 +92,13 @@ class EridiumMod(SDKMod):
         KeyBinds.D: "Discord",
     }
 
-    def Enabled(self):
+    def __init__(self):
         log(self, f"Version: {self.Version}")
         log(self, f"__debug__: {__debug__}")
+        try:
+            log(self, f"Latest release tag: {getLatestVersion('RLNT/bl2_eridium')}")
+        except RuntimeWarning as ex:
+            log(self, f"Error: {ex}")
 
     def SettingsInputPressed(self, action: str) -> None:
         if action == "GitHub":

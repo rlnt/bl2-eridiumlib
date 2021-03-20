@@ -1,3 +1,11 @@
 __pycache__
 settings.json
 todo
+vendor/
+!vendor/_socket.pyd
+!vendor/_ssl.pyd
+!vendor/_queue.pyd
+!vendor/select.pyd
+!vendor/libcrypto-1_1.dll
+!vendor/libssl-1_1.dll
+!vendor/unicodedata.pyd
