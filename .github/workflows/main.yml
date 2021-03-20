@@ -11,7 +11,10 @@ jobs:
     defaults:
       run:
         working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
-    steps:    
+    steps:
+    - run: echo "$MOD_NAME"
+    - run: pwd
+
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
