@@ -13,13 +13,9 @@ def checkClassName(
 
     foundClass = obj.Class.GetName()
     if foundClass != expectedClass:
-        raise RuntimeError(
-            f"expected object of class {expectedClass} but got {foundClass}"
-        )
+        raise RuntimeError(f"expected object of class {expectedClass} but got {foundClass}")
 
     if expectedName:
         foundName = obj.GetObjectName()
         if foundName != expectedName:
-            raise RuntimeError(
-                f"expected object with path {expectedName} but got {foundName}"
-            )
+            raise RuntimeError(f"expected object with path {expectedName} but got {foundName}")

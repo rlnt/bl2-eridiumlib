@@ -33,13 +33,13 @@ class KeyBinds(enum.Enum):
     F = "F"  # Letter F.
     G = "G"  # Letter G.
     H = "H"  # Letter H.
-    I = "I"  # Letter I.
+    I = "I"  # Letter I. # noqa: E741
     J = "J"  # Letter J.
     K = "K"  # Letter K.
     L = "L"  # Letter L.
     M = "M"  # Letter M.
     N = "N"  # Letter N.
-    O = "O"  # Letter O.
+    O = "O"  # Letter O. # noqa: E741
     P = "P"  # Letter P.
     Q = "Q"  # Letter Q.
     R = "R"  # Letter R.
@@ -143,19 +143,17 @@ class KeyBinds(enum.Enum):
     GamePad_A = "XboxTypeS_A"  # A button.
     GamePad_LeftShoulder = "XboxTypeS_LeftShoulder"  # Left shoulder button.
     GamePad_RightShoulder = "XboxTypeS_RightShoulder"  # Right shoulder button.
-    GamePad_LeftTrigger = (
-        "XboxTypeS_LeftTrigger"  # Left trigger when pressed as a button.
+    GamePad_LeftTrigger = "XboxTypeS_LeftTrigger"  # Left trigger when pressed as a button.
+    GamePad_RightTrigger = "XboxTypeS_RightTrigger"  # Right trigger when pressed as a button.
+    GamePad_LeftTriggerAxis = "XboxTypeS_LeftTriggerAxis"  # Left trigger when semi depressed.
+    GamePad_RightTriggerAxis = "XboxTypeS_RightTriggerAxis"  # Right trigger when semi depressed.
+    GamePad_LeftX = (
+        "XboxTypeS_LeftX"  # Left thumb stick horizontal position when used as an analogue control.
     )
-    GamePad_RightTrigger = (
-        "XboxTypeS_RightTrigger"  # Right trigger when pressed as a button.
+    GamePad_LeftY = (
+        "XboxTypeS_LeftY"  # Left thumb stick vertical position when used as an analogue control.
     )
-    GamePad_LeftTriggerAxis = (
-        "XboxTypeS_LeftTriggerAxis"  # Left trigger when semi depressed.
-    )
-    GamePad_RightTriggerAxis = (
-        "XboxTypeS_RightTriggerAxis"  # Right trigger when semi depressed.
-    )
-    GamePad_LeftX = "XboxTypeS_LeftX"  # Left thumb stick horizontal position when used as an analogue control.
-    GamePad_LeftY = "XboxTypeS_LeftY"  # Left thumb stick vertical position when used as an analogue control.
     GamePad_RightX = "XboxTypeS_RightX"  # Right thumb stick horizontal position when used as an analogue control.
-    GamePad_RightY = "XboxTypeS_RightY"  # Right thumb stick vertical position when used as an analogue control.
+    GamePad_RightY = (
+        "XboxTypeS_RightY"  # Right thumb stick vertical position when used as an analogue control.
+    )
