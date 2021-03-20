@@ -5,9 +5,6 @@ on: [push, pull_request]
 jobs:
   check:
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: PythonSDK/Mods/${{ github.event.repository.name }}
     steps:    
     - uses: actions/setup-python@v1
       with:
@@ -33,6 +30,7 @@ jobs:
     - name: Lint with flake8
       run: python -m flake8 . -v --show-source --statistics
     - name: Lint with mypy
+      working-directory: PythonSDK/Mods/${{ github.event.repository.name }}
       run: python -m mypy . --pretty
   build:
     runs-on: ubuntu-latest
