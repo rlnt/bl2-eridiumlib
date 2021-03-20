@@ -1,3 +1,4 @@
+# pyright: reportMissingImports=false
 import unrealsdk
 import importlib
 import webbrowser
