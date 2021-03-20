@@ -1,14 +1,9 @@
+from Mods.ModMenu.ModObjects import ModPriorities
 import unrealsdk
 from typing import Dict
 import webbrowser
 import importlib
-from Mods.ModMenu import (
-    SDKMod,
-    Mods,
-    ModTypes,
-    EnabledSaveType,
-    RegisterMod,
-)
+from Mods.ModMenu import SDKMod, ModTypes, EnabledSaveType, Hook
 from Mods.Eridium import keys, debug
 from Mods.Eridium.keys import KeyBinds
 
@@ -68,9 +63,7 @@ def getLatestVersion(repo: str) -> str:
 
 
 def isLatestRelease(latest_version: str, current_version: str) -> bool:
-    latest = semver.VersionInfo.parse(latest_version)
-    current = semver.VersionInfo.parse(current_version)
-    return semver.compare(current, latest) >= 0
+    return semver.compare(current_version, latest_version) >= 0
 
 
 class EridiumMod(SDKMod):
@@ -81,6 +74,7 @@ class EridiumMod(SDKMod):
 
     Types = ModTypes.Library
     SaveEnabledState = EnabledSaveType.LoadWithSettings
+    Priority = ModPriorities.Library
 
     SettingsInputs: Dict[str, str] = {
         KeyBinds.Enter: "Enable",
@@ -105,17 +99,16 @@ class EridiumMod(SDKMod):
             super().SettingsInputPressed(action)
 
 
-instance = EridiumMod()
-if __name__ == "__main__":
-    log(instance, "Manually loaded")
-    for mod in Mods:
-        if mod.Name == instance.Name:
-            if mod.IsEnabled:
-                mod.Disable()
-            Mods.remove(mod)
-            log(instance, "Removed last instance")
-
-            # Fixes inspect.getfile()
-            instance.__class__.__module__ = mod.__class__.__module__
-            break
-RegisterMod(instance)
+@Hook("WillowGame.FrontendGFxMovie.Start")
+def _OnMainMenu(
+    caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct
+) -> bool:
+    instance = EridiumMod()
+    unrealsdk.RegisterMod(instance)
+    if __name__ == "__main__":
+        for i in range(len(unrealsdk.Mods)):
+            if unrealsdk.Mods[i].Name == instance.Name:
+                unrealsdk.Mods.remove(instance)
+                unrealsdk.Mods[i] = instance
+                break
+    return True
