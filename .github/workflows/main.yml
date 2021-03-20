@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: /tmp/PythonSDK/Mods/Eridium
+        working-directory: /tmp/PythonSDK/Mods/${{ github.event.repository.name }}
     steps:    
     - name: Clone PythonSDK Mods
       working-directory: /tmp
@@ -17,7 +17,8 @@ jobs:
         git sparse-checkout init --cone
         git sparse-checkout set Mods
     - uses: actions/checkout@v2     
-      working-directory: /tmp/PythonSDK/Mods
+      with:
+        path: /tmp/PythonSDK/Mods/${{ github.event.repository.name }}
     - uses: actions/setup-python@v1
       with:
         python-version: '3.7'
