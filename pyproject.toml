@@ -4,13 +4,13 @@ multi_line_output = 3
 py_version = 37
 line_length = 100
 known_unrealsdk = "unrealsdk"
-known_mods = "Mods.ModMenu"
+known_modmenu = "Mods.ModMenu"
 sections = [
     "FUTURE",
     "UNREALSDK",
     "STDLIB",
     "THIRDPARTY",
-    "MODS",
+    "MODMENU",
     "FIRSTPARTY",
     "LOCALFOLDER",
 ]
