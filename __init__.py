@@ -1,6 +1,5 @@
 # pyright: reportMissingImports=false
 import unrealsdk
-import importlib
 import webbrowser
 from typing import Dict
 
@@ -10,8 +9,10 @@ from Mods.Eridium.keys import KeyBinds
 from Mods.ModMenu import EnabledSaveType, ModPriorities, Mods, ModTypes, RegisterMod, SDKMod
 
 if __name__ == "__main__":
+    import importlib
     import sys
 
+    importlib.reload(sys.modules["Mods.Eridium.debug"])
     importlib.reload(sys.modules["Mods.Eridium.keys"])
 
     # See https://github.com/bl-sdk/PythonSDK/issues/68
@@ -23,6 +24,7 @@ if __name__ == "__main__":
 import site
 
 site.addsitedir("Mods/Eridium/dist")
+
 
 # import bundled packages
 import requests  # noqa: E402
