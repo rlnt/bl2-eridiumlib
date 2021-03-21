@@ -1,4 +1,4 @@
-# pyright: reportMissingImports=false
+# pyright: reportMissingModuleSource=false
 import unrealsdk
 import webbrowser
 from typing import Any, Dict
@@ -21,18 +21,18 @@ if __name__ == "__main__":
     except NotImplementedError:
         __file__ = sys.exc_info()[-1].tb_frame.f_code.co_filename  # type: ignore
 
+# isort: skip
+
 import site
 
 site.addsitedir("Mods/Eridium/dist")
 
+# isort: skip
 
-# import bundled packages
-import requests  # noqa: E402
-import semver  # noqa: E402
-
-# import redistributed packages
 import socket
 import ssl
+import requests  # noqa: E402
+import semver  # noqa: E402
 
 __all__ = [
     "log",
@@ -42,7 +42,7 @@ __all__ = [
     "missions",
     "keys",
     "debug",
-    # redistributed packages
+    # redistributed modules
     "requests",
     "semver",
     "socket",
