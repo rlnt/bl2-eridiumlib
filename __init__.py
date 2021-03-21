@@ -1,7 +1,7 @@
 # pyright: reportMissingImports=false
 import unrealsdk
 import webbrowser
-from typing import Dict
+from typing import Any, Dict
 
 from Mods.Eridium import debug, keys
 from Mods.Eridium.keys import KeyBinds
@@ -41,8 +41,8 @@ __all__ = [
 ]
 
 
-def log(mod: SDKMod, message: str) -> None:
-    unrealsdk.Log(f"[{mod.Name}] {message}")
+def log(mod: SDKMod, *args: Any) -> None:
+    unrealsdk.Log(f"[{mod.Name}]", *args)
 
 
 def isClient() -> bool:
