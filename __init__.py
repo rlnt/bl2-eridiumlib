@@ -30,6 +30,10 @@ site.addsitedir("Mods/Eridium/dist")
 import requests  # noqa: E402
 import semver  # noqa: E402
 
+# import redistributed packages
+import socket
+import ssl
+
 __all__ = [
     "log",
     "isClient",
@@ -38,6 +42,11 @@ __all__ = [
     "missions",
     "keys",
     "debug",
+    # redistributed packages
+    "requests",
+    "semver",
+    "socket",
+    "ssl",
 ]
 
 
