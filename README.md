@@ -41,9 +41,9 @@ In order to work on this library, you need the latest python files from the `req
    - `libssl-1_1.dll`
    - `select.pyd`
    - `unicodedata.pyd`
-3. install pipenv:
+2. install pipenv:
    - `pip install --user pipenv`
-2. run update packages from pypi:
+3. run update packages from pypi:
    - `pipenv run pip install -t dist -r requirements.txt --upgrade`.
 
 
