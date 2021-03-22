@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "~=2.25"
+semver = "~=2.13"
+ujson = "~=4.0.2"
+
+[dev-packages]
+flake8-bugbear = "==20.11.1"
+flake8-comprehensions = "==3.3.1"
+flake8-mutable = "==1.2.0"
+flake8-noqa = "==1.1.0"
+flake8-pyi = "==20.10.0"
+flake8-simplify = "==0.13.0"
+flake8 = "==3.8.4"
+isort = "==5.7.0"
+mypy = "~=0.812"
+pep8-naming = "==0.11.1"
+black = "~=20.8b1"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
