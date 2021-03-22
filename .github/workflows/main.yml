@@ -38,8 +38,9 @@ jobs:
     
     - run: |
         ls
-        ls PythonSDK
-        ls PythonSDK/Mods
+        cd PythonSDK
+        ls
+        ls Mods
         python -m isort Mods/${{ env.MOD_NAME }} --show-config
 
     - name: Lint with isort
