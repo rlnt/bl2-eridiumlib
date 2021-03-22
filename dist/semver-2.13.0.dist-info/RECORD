@@ -1,5 +1,5 @@
-../../bin/pysemver.exe,sha256=vrxVtqjwfFBftGpOh0FO1PPIlVGOkb6PDyTQb4cQhFI,106360
-__pycache__/semver.cpython-39.pyc,,
+../../bin/pysemver.exe,sha256=MSkXSQnAmryG9ztaTiLBdL3RiYxT7ZgkrQx29w4PFeU,97146
+__pycache__/semver.cpython-37.pyc,,
 semver-2.13.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
 semver-2.13.0.dist-info/LICENSE.txt,sha256=zaSQwy5h04hNwXeR_IB48qPlZPupjdGLTcZOsnILK28,1496
 semver-2.13.0.dist-info/METADATA,sha256=Qd18YIGpmSt_EJfservMtatFrCtYd29JrRo_jsraZ2A,5041

@@ -1,4 +1,4 @@
-## Developing
+## Development
 
 ### Update `dist`
 
@@ -12,7 +12,19 @@ Download the embedded Win32 Version of Python 3.7.9 from [here](https://www.pyth
 - `select.pyd`
 - `unicodedata.pyd`
 
-Then run update packages from pypi with `pip install -t dist -r requirements.txt --upgrade`.
+Installing `ujson` may require *Microsoft Visual C++ 14.0 or greater*. Download [build tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and install `Microsoft C++ Build Tools`.
+
+Install `pipenv` with `pip`:
+```
+pip install --user pipenv
+```
+
+Pipenv is used to ensure the right version of python is used and the correct package versions are installed.
+
+Then update packages from pypi with
+```
+pipenv run pip install -t dist -r requirements.txt --upgrade
+```
 
 ## Licenses
 
