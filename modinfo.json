@@ -1,0 +1,18 @@
+{
+    "mods": [
+        {
+            "name": "EridiumLib",
+            "authors": "Chronophylos, Relentless",
+            "description": "Holds utility functions for some mods.",
+            "types": ["Library"],
+            "supports": ["BL2", "TPS"],
+            "issues": "https://github.com/RLNT/bl2_eridium/issues",
+            "source": "https://github.com/RLNT/bl2_eridium",
+            "latest": "0.3.2",
+            "versions": {
+                "0.3.2": "https://github.com/RLNT/bl2_eridium/releases/tag/v0.3.2"
+            },
+            "license": "https://github.com/RLNT/bl2_eridium/blob/main/LICENSE"
+        }
+    ]
+}
