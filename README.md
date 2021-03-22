@@ -1,4 +1,4 @@
-# **Eridium Lib** [![CI](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml/badge.svg)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml)
+# **Eridium Lib** [![CI](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml/badge.svg)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml) ![GitHub release (latest by date)](https://img.shields.io/github/downloads/RLNT/bl2_eridium/latest/total)
 
 > A [PythonSDK] library for Borderlands which holds utility functions for all our mods.
 
