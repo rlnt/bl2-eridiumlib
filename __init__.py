@@ -31,6 +31,7 @@ site.addsitedir("Mods/Eridium/dist")
 
 import socket
 import ssl
+
 import requests  # noqa: E402
 import semver  # noqa: E402
 import ujson  # noqo: E402

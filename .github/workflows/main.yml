@@ -32,9 +32,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r Mods/${{ env.MOD_NAME }}/requirements-linters.txt
     
-    - name: Move config files to our new "project dir"
+    - name: Move config files
       working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
       run: Move-Item -Path pyproject.toml, setup.cfg -Destination ../../
+    
+    - run: |
+        ls
+        ls PythonSDK
+        ls PythonSDK/Mods
+        python -m isort Mods/${{ env.MOD_NAME }} --show-config
 
     - name: Lint with isort
       working-directory: PythonSDK
