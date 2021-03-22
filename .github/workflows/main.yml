@@ -35,13 +35,6 @@ jobs:
     - name: Copy config files
       working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
       run: Copy-Item -Path pyproject.toml, setup.cfg -Destination ../../
-    
-    - run: |
-        ls
-        cd PythonSDK
-        ls
-        ls Mods
-        python -m isort Mods/${{ env.MOD_NAME }} --show-config
 
     - name: Lint with isort
       working-directory: PythonSDK
