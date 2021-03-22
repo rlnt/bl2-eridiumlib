@@ -1,6 +1,10 @@
-# **Eridium Lib** [![CI](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml/badge.svg)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml) ![GitHub release (latest by date)](https://img.shields.io/github/downloads/RLNT/bl2_eridium/latest/total) ![GitHub](https://img.shields.io/github/license/RLNT/bl2_eridium)
+# **Eridium Lib**
 
 > A [PythonSDK] library for Borderlands which holds utility functions for all our mods.
+
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/RLNT/bl2_eridium/CI?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml)
+[![GitHub release (latest by date)](https://img.shields.io/github/downloads/RLNT/bl2_eridium/total?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/releases/latest)
+[![GitHub](https://img.shields.io/github/license/RLNT/bl2_eridium?style=for-the-badge)](LICENSE)
 
 - [Discord][discord]
 - PythonSDK: `v0.7.9`
