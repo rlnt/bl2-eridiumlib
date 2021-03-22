@@ -1,7 +1,7 @@
 # pyright: reportMissingModuleSource=false
 import unrealsdk
 import webbrowser
-from typing import Any, Dict
+from typing import Any, Dict, cast
 
 from Mods.Eridium import debug, keys
 from Mods.Eridium.keys import KeyBinds
@@ -63,10 +63,8 @@ def isClient() -> bool:
 
 
 def getCurrentPlayerController() -> unrealsdk.UObject:
-    """Returns the current player.
-    This seems to always be the local player
-    """
-    return unrealsdk.GetEngine().GamePlayers[0].Actor
+    """Returns the local player."""
+    return cast(unrealsdk.UObject, unrealsdk.GetEngine().GamePlayers[0].Actor)
 
 
 def getLatestVersion(repo: str) -> str:
