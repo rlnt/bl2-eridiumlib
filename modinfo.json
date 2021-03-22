@@ -12,7 +12,10 @@
             "versions": {
                 "0.3.2": "https://github.com/RLNT/bl2_eridium/releases/tag/v0.3.2"
             },
-            "license": "https://github.com/RLNT/bl2_eridium/blob/main/LICENSE"
+            "license": [
+                "GNU Lesser General Public License v2.1",
+                "https://github.com/RLNT/bl2_eridium/blob/main/LICENSE"
+            ]
         }
     ]
 }
