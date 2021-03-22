@@ -5,6 +5,7 @@ on: [push, pull_request]
 env:
   MOD_NAME: EridiumLib
   RELEASE_FILES: "*.py LICENSE licenses dist"
+  UNREALSDK_PYI_URL: https://gist.githubusercontent.com/Chronophylos/b77049094c20c6906ebe13d042a07998/raw/bf05d45e33c9f69f03eb8b90d72e85d4b2f61ff0/unrealsdk.pyi
 
 jobs:
   check:
@@ -21,6 +22,9 @@ jobs:
         cd PythonSDK
         git sparse-checkout init --cone
         git sparse-checkout set Mods
+    
+    - name: Download unrealsdk.pyi
+      run: Invoke-WebRequest -Uri ${{ env.UNREALSDK_PYI_URL }} -Outfile PythonSDK/unrealsdk.pyi
 
     - uses: actions/checkout@v2     
       with:
