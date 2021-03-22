@@ -33,21 +33,21 @@ jobs:
         pip install -r Mods/${{ env.MOD_NAME }}/requirements-linters.txt
     
     - name: Move config files to our new "project dir"
-      working-directory: PythonSDK
-      run: mv Mods/$MOD_NAME/{pyproject.toml,setup.cfg} .
+      working-directory: PythonSDK/Mods/${{ env.MOD_NAME }}
+      run: Move-Item -Path pyproject.toml, setup.cfg -Destination ../../
 
     - name: Lint with isort
       working-directory: PythonSDK
-      run: python -m isort Mods/$MOD_NAME --check-only --diff
+      run: python -m isort Mods/${{ env.MOD_NAME }} --check-only --diff
     - name: Lint with black
       working-directory: PythonSDK
-      run: python -m black Mods/$MOD_NAME --check
+      run: python -m black Mods/${{ env.MOD_NAME }} --check
     - name: Lint with flake8
       working-directory: PythonSDK
-      run: python -m flake8 Mods/$MOD_NAME -v --show-source --statistics
+      run: python -m flake8 Mods/${{ env.MOD_NAME }} -v --show-source --statistics
     - name: Lint with mypy
       working-directory: PythonSDK
-      run: python -m mypy Mods/$MOD_NAME --pretty
+      run: python -m mypy Mods/${{ env.MOD_NAME }} --pretty
 
   build:
     runs-on: ubuntu-latest
