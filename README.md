@@ -1,4 +1,6 @@
-## Update `vendor`
+## Developing
+
+### Update `dist`
 
 Download the embedded Win32 Version of Python 3.7.9 from [here](https://www.python.org/ftp/python/3.7.9/python-3.7.9-embed-win32.zip) and copy the following files into `dist`:
 

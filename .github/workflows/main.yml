@@ -57,16 +57,16 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Package as tar
-      run: tar -czvf ${{ github.event.repository.name }}.tar.gz $RELEASE_FILES
+      run: tar -czvf ${{ env.MOD_NAME }}.tar.gz $RELEASE_FILES
     - name: Package as zip
-      run: zip -r ${{ github.event.repository.name }}.zip $RELEASE_FILES
+      run: zip -r ${{ env.MOD_NAME }}.zip $RELEASE_FILES
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            ${{ github.event.repository.name }}.tar.gz
-            ${{ github.event.repository.name }}.zip
+            ${{ env.MOD_NAME }}.tar.gz
+            ${{ env.MOD_NAME }}.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
