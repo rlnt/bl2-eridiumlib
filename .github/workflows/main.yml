@@ -74,6 +74,3 @@ jobs:
             ${{ env.MOD_NAME }}.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
