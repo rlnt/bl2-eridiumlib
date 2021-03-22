@@ -1,6 +1,7 @@
 # pyright: reportMissingModuleSource=false
 import unrealsdk
 import webbrowser
+import sys
 from typing import Any, Dict, cast
 
 from Mods.EridiumLib import debug, keys
@@ -10,7 +11,6 @@ from Mods.ModMenu import EnabledSaveType, ModPriorities, Mods, ModTypes, Registe
 
 if __name__ == "__main__":
     import importlib
-    import sys
 
     importlib.reload(sys.modules["Mods.EridiumLib.debug"])
     importlib.reload(sys.modules["Mods.EridiumLib.keys"])
@@ -101,11 +101,12 @@ class EridiumLib(SDKMod):
         self.Status = "Enabled"
 
         log(self, f"Version: {self.Version}")
-        log(self, f"__debug__: {__debug__}")
         try:
             log(self, f"Latest release tag: {getLatestVersion('RLNT/bl2_eridium')}")
         except RuntimeWarning as ex:
             log(self, f"Warning: {ex}")
+        log(self, f"Python Version: {sys.version}")
+        log(self, f"__debug__: {__debug__}")
 
     def SettingsInputPressed(self, action: str) -> None:
         if action == "GitHub":
