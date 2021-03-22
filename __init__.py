@@ -3,8 +3,8 @@ import unrealsdk
 import webbrowser
 from typing import Any, Dict, cast
 
-from Mods.Eridium import debug, keys
-from Mods.Eridium.keys import KeyBinds
+from Mods.EridiumLib import debug, keys
+from Mods.EridiumLib.keys import KeyBinds
 
 from Mods.ModMenu import EnabledSaveType, ModPriorities, Mods, ModTypes, RegisterMod, SDKMod
 
@@ -12,8 +12,8 @@ if __name__ == "__main__":
     import importlib
     import sys
 
-    importlib.reload(sys.modules["Mods.Eridium.debug"])
-    importlib.reload(sys.modules["Mods.Eridium.keys"])
+    importlib.reload(sys.modules["Mods.EridiumLib.debug"])
+    importlib.reload(sys.modules["Mods.EridiumLib.keys"])
 
     # See https://github.com/bl-sdk/PythonSDK/issues/68
     try:
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
 import site
 
-site.addsitedir("Mods/Eridium/dist")
+site.addsitedir("Mods/EridiumLib/dist")
 
 # isort: skip
 
