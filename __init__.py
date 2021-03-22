@@ -89,7 +89,7 @@ def isLatestRelease(latest_version: str, current_version: str) -> bool:
 
 class EridiumLib(SDKMod):
     Name = "EridiumLib"
-    Author = "Chronophylos"
+    Author = "Chronophylos, Relentless"
     Description = "A library with common functionality of all our mods"
     Version = __version__
 
