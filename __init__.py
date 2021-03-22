@@ -79,6 +79,11 @@ def getLatestVersion(repo: str) -> str:
 
 
 def isLatestRelease(latest_version: str, current_version: str) -> bool:
+    if latest_version[0] == "v":
+        latest_version = latest_version[1:]
+    if current_version[0] == "v":
+        current_version = current_version[1:]
+
     return int(semver.compare(current_version, latest_version)) >= 0
 
 
