@@ -1,7 +1,7 @@
 # pyright: reportMissingModuleSource=false
 import unrealsdk
-import webbrowser
 import sys
+import webbrowser
 from typing import Any, Dict, cast
 
 from Mods.EridiumLib import debug, keys
