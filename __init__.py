@@ -33,6 +33,7 @@ import socket
 import ssl
 import requests  # noqa: E402
 import semver  # noqa: E402
+import ujson  # noqo: E402
 
 __all__ = [
     "log",
@@ -45,6 +46,8 @@ __all__ = [
     # redistributed modules
     "requests",
     "semver",
+    "ujson",
+    # python c modules
     "socket",
     "ssl",
 ]
