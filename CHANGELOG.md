@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Log python version
+
+### Fixed
+
+- Installed ujson for Win32 Python 3.7
+
 ## [0.3.0] - 2021-03-22
 
 ### Added
