@@ -5,6 +5,7 @@
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/RLNT/bl2_eridium/CI?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml)
 [![GitHub release (latest by date)](https://img.shields.io/github/downloads/RLNT/bl2_eridium/total?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/releases/latest)
 [![GitHub](https://img.shields.io/github/license/RLNT/bl2_eridium?style=for-the-badge)](LICENSE)
+[![Code Style Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)](https://github.com/psf/black)
 
 - [Discord][discord]
 - PythonSDK: `v0.7.9`
