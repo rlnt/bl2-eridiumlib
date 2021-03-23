@@ -1,11 +1,6 @@
-# **Eridium Lib**
+# **Eridium Lib** [![Workflow Status][workflow_status_badge]][workflow_status_link] [![Total Downloads][total_downloads_badge]][total_downloads_link] [![License][license_badge]][license]
 
 > A [PythonSDK] library for Borderlands which holds utility functions for all our mods.
-
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/RLNT/bl2_eridium/CI?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml)
-[![GitHub release (latest by date)](https://img.shields.io/github/downloads/RLNT/bl2_eridium/total?style=for-the-badge)](https://github.com/RLNT/bl2_eridium/releases/latest)
-[![GitHub](https://img.shields.io/github/license/RLNT/bl2_eridium?style=for-the-badge)](LICENSE)
-[![Code Style Black](https://img.shields.io/badge/code%20style-black-000000.svg?style=for-the-badge)](https://github.com/psf/black)
 
 - [Discord][discord]
 - PythonSDK: `v0.7.9`
@@ -57,13 +52,20 @@ Everything related to versions and their release notes can be found in the [chan
 
 
 ## **🎓 License**
-This project and all containing files, except for those in `dist`, are licensed under [GPL-3.0-or-later][license].
+This project and all containing files, except for those in `dist`, are licensed under [LGPL-2.1-or-later][license].
 
 - OpenSSL 1.1 is licensed under [the dual OpenSSL and SSLeay license][openssl_license]
 - Python 3.7 is licensed under [the Python License][python_license]
 
 You can find licenses for python packages downloaded with `pip` in their respective `*.dist-info` directory.
 
+
+<!-- Badges -->
+[workflow_status_badge]: https://img.shields.io/github/workflow/status/RLNT/bl2_eridium/CI?style=flat-square
+[workflow_status_link]: https://github.com/RLNT/bl2_eridium/actions/workflows/main.yml
+[total_downloads_badge]: https://img.shields.io/github/downloads/RLNT/bl2_eridium/total?style=flat-square
+[total_downloads_link]: https://github.com/RLNT/bl2_eridium/releases/latest
+[license_badge]: https://img.shields.io/github/license/RLNT/bl2_eridium?style=flat-square
 
 <!-- Links -->
 [pythonsdk]: http://borderlandsmodding.com/sdk-mods/

@@ -52,7 +52,7 @@ __all__ = [
     "socket",
     "ssl",
 ]
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 
 
 def log(mod: SDKMod, *args: Any) -> None:
@@ -79,12 +79,17 @@ def getLatestVersion(repo: str) -> str:
 
 
 def isLatestRelease(latest_version: str, current_version: str) -> bool:
+    if latest_version[0] == "v":
+        latest_version = latest_version[1:]
+    if current_version[0] == "v":
+        current_version = current_version[1:]
+
     return int(semver.compare(current_version, latest_version)) >= 0
 
 
 class EridiumLib(SDKMod):
     Name = "EridiumLib"
-    Author = "Chronophylos"
+    Author = "Chronophylos, Relentless"
     Description = "A library with common functionality of all our mods"
     Version = __version__
 
