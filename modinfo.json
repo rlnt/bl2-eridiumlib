@@ -2,8 +2,15 @@
     "mods": [
         {
             "name": "EridiumLib",
-            "authors": "Chronophylos, Relentless",
-            "description": "Holds utility functions for some mods.",
+            "authors": ["Chronophylos", "Relentless"],
+            "description": [
+                "Holds utility functions for some mods.\n",
+                "\n",
+                "Everything related to versions and their release notes can be found in the [changelog](https://github.com/RLNT/bl2_eridium/blob/main/CHANGELOG.md).\n",
+                "If you found a bug or you have a feature request, please use our issue tracker linked below.\n",
+                "In case you need support, please join our [Discord](https://discordapp.com/invite/Q3qxws6)."
+            ],
+            "tagline": "Holds utility functions for some mods.",
             "types": ["Library"],
             "supports": ["BL2", "TPS"],
             "issues": "https://github.com/RLNT/bl2_eridium/issues",
