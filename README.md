@@ -52,7 +52,7 @@ Everything related to versions and their release notes can be found in the [chan
 
 
 ## **🎓 License**
-This project and all containing files, except for those in `dist`, are licensed under [GPL-3.0-or-later][license].
+This project and all containing files, except for those in `dist`, are licensed under [LGPL-2.1-or-later][license].
 
 - OpenSSL 1.1 is licensed under [the dual OpenSSL and SSLeay license][openssl_license]
 - Python 3.7 is licensed under [the Python License][python_license]
