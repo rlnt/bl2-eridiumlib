@@ -2,7 +2,7 @@
 import unrealsdk
 import sys
 import webbrowser
-from typing import Any, Dict, cast
+from typing import Any, Dict, Optional, cast
 
 from Mods.EridiumLib import debug, keys
 from Mods.EridiumLib.keys import KeyBinds
@@ -40,8 +40,14 @@ __all__ = [
     "log",
     "isClient",
     "getCurrentPlayerController",
+    "getCurrentWorldInfo",
+    "getCurrentGameInfo",
+    "getSkillManager",
+    "getActionSkill",
+    "getVaultHunterClassName",
+    "getLatestVersion",
+    "isLatestRelease",
     "EridiumMod",
-    "missions",
     "keys",
     "debug",
     # redistributed modules
@@ -52,7 +58,7 @@ __all__ = [
     "socket",
     "ssl",
 ]
-__version__ = "0.3.2"
+__version__ = "0.4.0"
 
 
 def log(mod: SDKMod, *args: Any) -> None:
@@ -67,6 +73,45 @@ def isClient() -> bool:
 def getCurrentPlayerController() -> unrealsdk.UObject:
     """Returns the local player."""
     return cast(unrealsdk.UObject, unrealsdk.GetEngine().GamePlayers[0].Actor)
+
+
+def getCurrentWorldInfo() -> unrealsdk.UObject:
+    """Returns the current world info."""
+    return cast(unrealsdk.UObject, unrealsdk.GetEngine().GetCurrentWorldInfo())
+
+
+def getCurrentGameInfo() -> unrealsdk.UObject:
+    """Returns the current game info."""
+    return cast(unrealsdk.UObject, getCurrentWorldInfo().Game)
+
+
+def getSkillManager() -> unrealsdk.UObject:
+    """Returns the global skill manager from the game info."""
+    return cast(unrealsdk.UObject, getCurrentGameInfo().GetSkillManager())
+
+
+def getActionSkill(PC: Optional[unrealsdk.UObject] = None) -> unrealsdk.UObject:
+    """
+    Returns the action skill of a player controller.
+    A player controller can be passed in.
+    If no player controller is passed in, the local player will be used.
+    """
+    if PC is None:
+        PC = getCurrentPlayerController()
+
+    return cast(unrealsdk.UObject, PC.PlayerSkillTree.GetActionSkill())
+
+
+def getVaultHunterClassName(PC: Optional[unrealsdk.UObject] = None) -> str:
+    """
+    Returns the class name of a Vault Hunter of a player controller.
+    A player controller can be passed in.
+    If no player controller is passed in, the local player will be used.
+    """
+    if PC is None:
+        PC = getCurrentPlayerController()
+
+    return str(PC.PlayerClass.CharacterNameId.CharacterClassId.ClassName)
 
 
 def getLatestVersion(repo: str) -> str:
