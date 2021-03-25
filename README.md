@@ -1,4 +1,4 @@
-# **Eridium Lib** [![Workflow Status][workflow_status_badge]][workflow_status_link] [![Total Downloads][total_downloads_badge]][total_downloads_link] [![License][license_badge]][license]
+# **Eridium Lib** [![Workflow Status][workflow_status_badge]][workflow_status_link] [![Total Downloads][total_downloads_badge]][total_downloads_link] [![License][license_badge]][license] [![Code Style][black_badge]][black_link]
 
 > A [PythonSDK] library for Borderlands which holds utility functions for all our mods.
 
@@ -66,6 +66,9 @@ You can find licenses for python packages downloaded with `pip` in their respect
 [total_downloads_badge]: https://img.shields.io/github/downloads/RLNT/bl2_eridium/total?style=flat-square
 [total_downloads_link]: https://github.com/RLNT/bl2_eridium/releases/latest
 [license_badge]: https://img.shields.io/github/license/RLNT/bl2_eridium?style=flat-square
+[black_badge]: https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square
+[black_link]: https://github.com/psf/black
+
 
 <!-- Links -->
 [pythonsdk]: http://borderlandsmodding.com/sdk-mods/
