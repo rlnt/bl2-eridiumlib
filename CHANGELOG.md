@@ -15,6 +15,17 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Released]
 
+## [0.4.0] - 2021-03-25
+
+### Added
+- getCurrentWorldInfo function
+- getCurrentGameInfo function
+- getSkillManager function
+- getActionSkill function
+- getVaultHunterClassName function
+- missing functions to all array
+
+
 ## [0.3.2] - 2021-03-22
 
 ### Added
@@ -70,6 +81,7 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 <!-- Versions -->
 [unreleased]: https://github.com/RLNT/bl2_eridium/compare/v1.0.0...HEAD
 [released]: https://github.com/RLNT/bl2_eridium/releases
+[0.4.0]: https://github.com/RLNT/bl2_eridium/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/RLNT/bl2_eridium/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/RLNT/bl2_eridium/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/RLNT/bl2_eridium/compare/v0.2.0...v0.3.0
