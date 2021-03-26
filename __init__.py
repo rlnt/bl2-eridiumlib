@@ -31,10 +31,12 @@ site.addsitedir("Mods/EridiumLib/dist")
 
 import socket
 import ssl
+import asyncio
 
 import requests  # noqa: E402
 import semver  # noqa: E402
 import ujson  # noqo: E402
+
 
 __all__ = [
     "log",
@@ -48,9 +50,9 @@ __all__ = [
     "requests",
     "semver",
     "ujson",
-    # python c modules
     "socket",
     "ssl",
+    "asyncio",
 ]
 __version__ = "0.3.2"
 

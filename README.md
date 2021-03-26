@@ -34,6 +34,8 @@ In order to work on this library, you need the latest python files from the `req
 
 ### **Update `dist`**
 1. download the embedded Win32 Version of Python 3.7.9 from [here][python_download] and copy the following files into `dist`:
+   - `_asyncio.pyd`
+   - `_overlapped.pyd`
    - `_queue.pyd`
    - `_socket.pyd`
    - `_ssl.pyd`
