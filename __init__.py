@@ -1,5 +1,4 @@
 # pyright: reportMissingModuleSource=false
-from requests.models import HTTPError
 import unrealsdk
 import sys
 import webbrowser
