@@ -29,27 +29,28 @@ site.addsitedir("Mods/EridiumLib/dist")
 
 # isort: skip
 
+import asyncio
 import socket
 import ssl
-import asyncio
 
 import requests  # noqa: E402
 import semver  # noqa: E402
 import ujson  # noqo: E402
 
-
 __all__ = [
     "log",
     "isClient",
     "getCurrentPlayerController",
-    "checkLibraryVersion",
     "getCurrentWorldInfo",
     "getCurrentGameInfo",
     "getSkillManager",
     "getActionSkill",
     "getVaultHunterClassName",
+    "validateVersion",
     "getLatestVersion",
     "isLatestRelease",
+    "checkLibraryVersion",
+    "checkModVersion",
     "EridiumMod",
     "keys",
     "debug",
