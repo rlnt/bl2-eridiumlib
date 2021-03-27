@@ -1,4 +1,5 @@
 # pyright: reportMissingModuleSource=false
+from requests.models import HTTPError
 import unrealsdk
 import sys
 import webbrowser
@@ -43,13 +44,12 @@ __all__ = [
     "isClient",
     "getCurrentPlayerController",
     "checkLibraryVersion",
+    "checkModVersion",
     "getCurrentWorldInfo",
     "getCurrentGameInfo",
     "getSkillManager",
     "getActionSkill",
     "getVaultHunterClassName",
-    "getLatestVersion",
-    "isLatestRelease",
     "EridiumMod",
     "keys",
     "debug",
@@ -94,8 +94,8 @@ def getSkillManager() -> unrealsdk.UObject:
 
 
 def getActionSkill(PC: Optional[unrealsdk.UObject] = None) -> unrealsdk.UObject:
-    """
-    Returns the action skill of a player controller.
+    """Returns the action skill of a player controller.
+
     A player controller can be passed in.
     If no player controller is passed in, the local player will be used.
     """
@@ -106,8 +106,8 @@ def getActionSkill(PC: Optional[unrealsdk.UObject] = None) -> unrealsdk.UObject:
 
 
 def getVaultHunterClassName(PC: Optional[unrealsdk.UObject] = None) -> str:
-    """
-    Returns the class name of a Vault Hunter of a player controller.
+    """Returns the class name of a Vault Hunter of a player controller.
+
     A player controller can be passed in.
     If no player controller is passed in, the local player will be used.
     """
@@ -118,7 +118,7 @@ def getVaultHunterClassName(PC: Optional[unrealsdk.UObject] = None) -> str:
 
 
 def getLatestVersion(repo: str) -> str:
-    response = requests.get(f"https://api.github.com/repos/{repo}/releases")
+    response = requests.get(f"https://api.github.com/repos/{repo}/releases", timeout=30)
     response.raise_for_status()
     releases = response.json()
     if len(releases) < 1:
@@ -135,8 +135,31 @@ def isLatestRelease(latest_version: str, current_version: str) -> bool:
     return int(semver.compare(current_version, latest_version)) >= 0
 
 
+def checkModVersion(mod: SDKMod, repo: str) -> None:
+    """Returns a string to the download page if the version of the passed mod is newer.
+
+    Otherwise returns None
+    """
+
+    log(mod, f"Version: v{mod.Version}")
+    try:
+        latestVersion = getLatestVersion(repo)
+    except TimeoutError:
+        log(mod, f"Connection to GitHub repository {repo} timed out")
+        return None
+    except HTTPError:
+        log(mod, f"Could not connect to GitHub repository {repo}")
+        return None
+
+    if not isLatestRelease(validateVersion(latestVersion), validateVersion(mod.Version)):
+        log(mod, "Mod is up-to-date!")
+    else:
+        log(mod, f"Newer version available: {latestVersion}")
+
+
 def checkLibraryVersion(required_version: str) -> bool:
     """Returns True if the version of EridiumLib is compatible.
+
     Opens the download page for EridiumLib if the version is incompatible.
     """
     import webbrowser
