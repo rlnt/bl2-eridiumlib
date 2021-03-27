@@ -19,16 +19,6 @@
    - `Borderlands 2\Binaries\Win32\Mods`
 
 
-## **🐞 Troubleshooting**
-What you can do if this website was opened automatically upon starting the game:
-
-- make sure you installed the latest **release** from [releases]
-- make sure the EridiumLib sits in the right path
-  - `Borderlands 2\Binaries\Win32\Mods\EridiumLib`
-- make sure you have the `dist` folder within the mod directory and there are files in it
-- if it's still not working, contact us on [Discord]
-
-
 ## **💻 Developing**
 In order to work on this library, you need the latest python files from the `requirements.txt`.
 
