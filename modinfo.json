@@ -15,8 +15,9 @@
       "supports": ["BL2", "TPS"],
       "issues": "https://github.com/RLNT/bl2_eridium/issues",
       "source": "https://github.com/RLNT/bl2_eridium",
-      "latest": "0.4.0",
+      "latest": "0.4.1",
       "versions": {
+        "0.4.1": "https://github.com/RLNT/bl2_eridium/releases/tag/v0.4.1",
         "0.4.0": "https://github.com/RLNT/bl2_eridium/releases/tag/v0.4.0",
         "0.3.2": "https://github.com/RLNT/bl2_eridium/releases/tag/v0.3.2"
       },
