@@ -31,15 +31,18 @@ site.addsitedir("Mods/EridiumLib/dist")
 
 import socket
 import ssl
+import asyncio
 
 import requests  # noqa: E402
 import semver  # noqa: E402
 import ujson  # noqo: E402
 
+
 __all__ = [
     "log",
     "isClient",
     "getCurrentPlayerController",
+    "checkLibraryVersion",
     "getCurrentWorldInfo",
     "getCurrentGameInfo",
     "getSkillManager",
@@ -54,9 +57,9 @@ __all__ = [
     "requests",
     "semver",
     "ujson",
-    # python c modules
     "socket",
     "ssl",
+    "asyncio",
 ]
 __version__ = "0.4.0"
 
@@ -130,6 +133,20 @@ def isLatestRelease(latest_version: str, current_version: str) -> bool:
         current_version = current_version[1:]
 
     return int(semver.compare(current_version, latest_version)) >= 0
+
+
+def checkLibraryVersion(required_version: str) -> bool:
+    """Returns True if the version of EridiumLib is compatible.
+    Opens the download page for EridiumLib if the version is incompatible.
+    """
+    import webbrowser
+
+    if int(semver.compare(__version__, required_version)) >= 0:
+        return True
+
+    webbrowser.open("https://github.com/RLNT/bl2_eridium/releases/latest")
+
+    return False
 
 
 class EridiumLib(SDKMod):

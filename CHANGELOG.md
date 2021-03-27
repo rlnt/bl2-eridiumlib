@@ -6,7 +6,10 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Unreleased]
 
-- /
+### Added
+
+- Export `asyncio`
+- `_asyncio.pyd`, `_overlapped.pyd` to the distributed files
 
 ---
 
