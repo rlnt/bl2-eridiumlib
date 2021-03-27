@@ -200,12 +200,7 @@ class EridiumLib(SDKMod):
 
     def __init__(self) -> None:
         self.Status = "Enabled"
-
-        log(self, f"Version: {self.Version}")
-        try:
-            log(self, f"Latest release tag: {getLatestVersion('RLNT/bl2_eridium')}")
-        except RuntimeWarning as ex:
-            log(self, f"Warning: {ex}")
+        checkModVersion(self, "RLNT/bl2_eridium")
         log(self, f"Python Version: {sys.version}")
         log(self, f"__debug__: {__debug__}")
 
