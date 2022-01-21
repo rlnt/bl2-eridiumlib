@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 requests = "~=2.25"
 semver = "~=2.13"
-ujson = "~=4.0.2"
+ujson = "~=5.1.0"
 
 [dev-packages]
 flake8-bugbear = "==20.11.1"
