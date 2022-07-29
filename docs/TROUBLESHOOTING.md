@@ -32,10 +32,5 @@ If you don't have a console, you can also take a look at the PythonSDK log which
   - try redownloading the latest **release** from [releases] and make sure the path is correct
   - make sure you didn't download the repository source code, use the release
 
-## **I am still having problems!**
-Join our [Discord] and ask for help.
-
-
 <!-- Links -->
-[discord]: https://discordapp.com/invite/Q3qxws6
-[releases]: https://github.com/RLNT/bl2_eridium/releases
+[releases]: https://github.com/DAmNRelentless/bl2-eridiumlib/releases

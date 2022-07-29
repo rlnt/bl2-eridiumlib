@@ -59,7 +59,7 @@ __all__ = [
     "ssl",
     "asyncio",
 ]
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 
 def log(mod: SDKMod, *args: Any) -> None:
@@ -176,7 +176,7 @@ def checkLibraryVersion(requiredVersion: str) -> bool:
     if int(semver.compare(__version__, validateVersion(requiredVersion))) >= 0:
         return True
 
-    webbrowser.open("https://github.com/RLN/bl2_eridiumT/blob/main/docs/TROUBLESHOOTING.md")
+    webbrowser.open("https://github.com/DAmNRelentless/bl2-eridiumlib/blob/main/docs/TROUBLESHOOTING.md")
     return False
 
 
@@ -192,20 +192,17 @@ class EridiumLib(SDKMod):
 
     SettingsInputs: Dict[str, str] = {
         KeyBinds.G.value: "GitHub",
-        KeyBinds.D.value: "Discord",
     }
 
     def __init__(self) -> None:
         self.Status = "Enabled"
-        checkModVersion(self, "RLNT/bl2_eridium")
+        checkModVersion(self, "DAmNRelentless/bl2-eridiumlib")
         log(self, f"Python Version: {sys.version}")
         log(self, f"__debug__: {__debug__}")
 
     def SettingsInputPressed(self, action: str) -> None:
         if action == "GitHub":
-            webbrowser.open("https://github.com/RLNT/bl2_eridium")
-        elif action == "Discord":
-            webbrowser.open("https://discord.com/invite/Q3qxws6")
+            webbrowser.open("https://github.com/DAmNRelentless/bl2-eridiumlib")
         else:
             super().SettingsInputPressed(action)
 
