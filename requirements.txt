@@ -1,3 +1,2 @@
 requests ~= 2.25
 semver ~= 2.13
-ujson ~= 4.0.2
