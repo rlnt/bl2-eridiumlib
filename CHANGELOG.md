@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 - /
 
-## [0.4.2] - 2022-XX-XX
+## [0.4.2] - 2022-07-30
 
 ### Changed
 - repository relocation
